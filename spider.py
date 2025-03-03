@@ -50,7 +50,7 @@ class Spider:
 			print(spiderName+ ' now crawling: ' +pageUrl)
 			print('Queue: '+str(len(Spider.queue)) + ' | Crawled: '+str(len(Spider.crawled)))
 			Spider.add_links_to_queue(Spider.gather_links(pageUrl))
-			Spider.queue.remove(pageUrl)
+			Spider.queue.discard(pageUrl)
 			Spider.crawled.add(pageUrl)
 			Spider.update_files()
 
